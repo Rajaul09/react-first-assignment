@@ -13,11 +13,15 @@ const Home = () => {
                         </div>
                         <h1 className="header">Introduction to C Programming</h1>
                         <p className="cart-para">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                        <div className="cart-price">
-                            <p>Price: 100usd</p>
-                            <p>Credit : 1hr</p>
+                        <div className="price-flex">
+                            <p className="price">Price: 100usd</p>
+                            <p className="credit">Credit : 1hr</p>
                         </div>
+                        <button className="btn-design">hello</button>
                     </div>
+                </div>
+                <div className="course-container">
+                <h3 className="heading-text">Hello rajon</h3>
                 </div>
             </div>
         </div>
