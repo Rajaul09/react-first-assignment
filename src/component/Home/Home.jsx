@@ -30,10 +30,17 @@ const Home = () => {
             readCourses.forEach((item) =>{
                 count = count + item.courseHours;
             });
-            const totalRemaining=200-count;
-            setTotalCost(count);
-            setRemaming(totalRemaining);
-            setAddCourses([...readCourses, course]);
+            const totalRemaining = 20-count;
+            
+            if(count >= 20){
+                return alert('Your Credit I Full');
+            }
+            else{
+                setTotalCost(count);
+                setRemaming(totalRemaining);
+                setAddCourses([...readCourses, course]);
+            }
+           
         }
        
     };
