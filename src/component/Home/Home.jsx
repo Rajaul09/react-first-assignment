@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
+import Cart from "../Cart/Cart";
 
 import './Home.css'
 
@@ -15,10 +16,20 @@ const Home = () => {
     }, []);
 
     const handleSelectCourse = (course) => {
-        setAddCourses([...readCourses, course]);
-    }
 
-    console.log(setAddCourses)
+        const isExist = readCourses.find((item) => item.id == 
+        course.id);
+        if(isExist){
+            return alert('Already Taken course');
+        }
+        else
+        {
+            setAddCourses([...readCourses, course]);
+        }
+       
+    };
+
+    console.log(readCourses);
 
     return (
         <div className="container">
@@ -43,7 +54,7 @@ const Home = () => {
                     }
                 </div>
                 <div className="course-container">
-                    <h3 className="heading-text">Hello rajon</h3>
+                    <Cart readCourses={readCourses}></Cart>
                 </div>
             </div>
         </div>
