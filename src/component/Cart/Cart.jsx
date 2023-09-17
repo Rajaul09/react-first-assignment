@@ -3,7 +3,7 @@ import './Cart.css';
 
 
 const Cart = ({readCourses,remining,totalCost}) => {
-    console.log(readCourses);
+    // console.log(readCourses);
 
     return (
         <div>

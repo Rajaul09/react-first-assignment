@@ -45,7 +45,7 @@ const Home = () => {
        
     };
 
-    console.log(readCourses);
+    // console.log(readCourses);
 
     return (
         <div className="container">
