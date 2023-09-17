@@ -8,6 +8,8 @@ import './Home.css'
 const Home = () => {
     const [allCourse, setAllCourse] = useState([]);
     const [readCourses, setAddCourses] = useState([]);
+    const [remining, setRemaming]=useState(0);
+    const [totalCost, setTotalCost] = useState(0);
 
     useEffect(() => {
         fetch('./data.json')
@@ -19,11 +21,18 @@ const Home = () => {
 
         const isExist = readCourses.find((item) => item.id == 
         course.id);
+        let count =course.courseHours;
         if(isExist){
             return alert('Already Taken course');
         }
         else
         {
+            readCourses.forEach((item) =>{
+                count = count + item.courseHours;
+            });
+            const totalRemaining=200-count;
+            setTotalCost(count);
+            setRemaming(totalRemaining);
             setAddCourses([...readCourses, course]);
         }
        
@@ -54,7 +63,7 @@ const Home = () => {
                     }
                 </div>
                 <div className="course-container">
-                    <Cart readCourses={readCourses}></Cart>
+                    <Cart readCourses={readCourses} remining={remining} totalCost={totalCost}></Cart>
                 </div>
             </div>
         </div>
