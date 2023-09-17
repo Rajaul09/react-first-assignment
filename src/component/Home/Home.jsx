@@ -33,7 +33,7 @@ const Home = () => {
             const totalRemaining = 20-count;
             
             if(count >= 20){
-                return alert('Your Credit I Full');
+                return alert('Your Credit Is Full');
             }
             else{
                 setTotalCost(count);
